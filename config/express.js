@@ -57,23 +57,25 @@ app.use(function (req, res, next) {
     middleware.checkToken(req, res, next);
   }
 });
-
 app.use(routes);
-
 // catch 404
 app.use((req, res, next) => {
-  return res.status(404).send({
-    message: "API Not Found",
-    statusCode: "404",
-    data: null,
+	return res.status(404).send({
+	  message: "API Not Found",
+	  statusCode: "404",
+	  data: null,
+	});
   });
-});
-app.use(function (err, req, res, next) {
-  console.error(err.stack);
-  // db logger comes here
-  next();
-  //res.status(500).send('Something broke!')
-});
-app.set("x-powered-by", false);
+  app.use(function (err, req, res, next) {
+	console.error(err.stack);
+	// db logger comes here
+	next();
+	//res.status(500).send('Something broke!')
+  });
+  app.set("x-powered-by", false);
+
+
+
+
 
 module.exports = app;

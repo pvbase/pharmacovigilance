@@ -6,13 +6,12 @@ const OrganisationSchema = mongoose.Schema({
   // org_type_id: { type: String, trim: true },
   is_active: { type: Boolean, default: true },
   created_by: String,
-  created_on: { type: Date, default: Date.now },
   modified_by: String,
-  modified_on: { type: Date, default: Date.now }
-});
+},
+{ timestamps: true });
 
 OrganisationSchema.pre('update', function() {
-  this.update({},{ $set: { modified_on: new Date() } });
+  this.update({},{ $set: { updatedAt: new Date() } });
 });
 
 const Organisation = mongoose.model('organisation', OrganisationSchema);
