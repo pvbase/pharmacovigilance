@@ -15,7 +15,7 @@ exports.createOrganisation = function (req, res) {
 
         newOrgDetails.save(function (err, data) {
             if (err)
-                return res.json({ message: "Database error", type: "error", data: err });
+                return res.json({ message: "Database error", type: "error", data: err.message });
             else
                 return res.json({ message: "New organisation added", type: "success", data: data });
         });
