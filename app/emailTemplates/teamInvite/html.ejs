@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Invitation Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+	.right-align {
+		float:right;
+	}
+	.right-align .para{
+		cursor: pointer;
+		width:32px;
+		height:32px;
+		border-radius:32px;
+		-webkit-border-radius: 32px;
+		-moz-border-radius: 32px;
+		background-color: #ffbf6e;
+		margin:0;
+		text-align:center;
+		float:left;
+		margin-right:12px;
+	}
+	
+	.header{
+		background-color:#ee9c34 !important;
+		margin:0;
+		text-align:center;
+		color:#fff;
+		font-weight:300;
+		font-size:30px;
+		padding:1rem 0 0 0;
+		font-family: 'Open Sans', sans-serif;
+		height:26rem;
+	}
+	.right-align .para img{
+		padding-bottom:15px;
+	}
+	.align-left{
+		float: left;
+	}
+	.align-center{
+		align:center;
+	}
+	
+	.body{
+		border: 1px solid whitesmoke;
+		padding: 2rem;
+		box-shadow: 0 2px 9px 1px rgba(51, 51, 51, 0.4);
+	}
+	.body_p{
+		opacity:.99;
+		color:#666666;
+		font-size:15px;
+		font-weight:400;
+		line-height:24px;
+		text-align:justify;
+	}
+	.body_pbold{
+		font-weight: 700;
+		line-height: 24px;
+		color:#666666;
+		font-size: 14px;
+		margin-bottom:5px;
+		text-align:center;
+	}
+	.reset_btn{
+		width:25rem;
+		height:44px;
+		border-radius: 2px;
+		background-color: #ee9c34;
+		color:white;
+		display:inline-block;
+		line-height:45px;
+		text-decoration:none;
+		text-align:center;
+	}
+	.reset_btn:hover{
+		text-decoration:none;
+		color:white;
+	}
+	</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+	<div class="col-lg-3"></div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+		<div class="header">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="right-align">
+					<a href="https://www.twitter.com/pwc_in" name="https://www.twitter.com/pwc_in">
+						<p class="para">
+							<img src="https://s3.amazonaws.com/sampleimagesdemo/twitter.png" aria-hidden="true" alt="twitter" title="twitter" />
+						</p>
+					</a>
+					
+					<a href="https://www.facebook.com/PwCIndia" name="https://www.facebook.com/PwCIndia">
+						<p class="para">
+							<img src="https://s3.amazonaws.com/sampleimagesdemo/facebook.png" aria-hidden="true" alt="facebook" title="facebook" />
+						</p>
+					</a>
+				   
+					<a href="http://www.linkedin.com/company/pwc-india" name="http://www.linkedin.com/company/pwc-india">
+						<p class="para">
+							<img src="https://s3.amazonaws.com/sampleimagesdemo/in.png" aria-hidden="true" alt="linkedin" title="linkedin" />
+						</p>
+					</a>
+				</div>
+				<img src="https://s3.amazonaws.com/sampleimagesdemo/neomegha-logo.png" class="align-left">
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
+				<img src ="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAABiCAMAAADp2ojaAAAAAXNSR0IB2cksfwAAAuhQTFRFAAAA6Ojo5ubm9/f36Ojo8fHx////7Ozs8/Pz6+vr6+vr9PT07+/v/Pz8/Pz8+fn57+/v6urq+fn57+/v6urq8/Pz7u7u////////////////9/f3////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////SPi56gAAAPh0Uk5TAFcf9nDc/6/mmpzwvv7/+86F/M+H58DC6OE49/XQ5XDclFqirKkWWb93ZOO5E4jZbjsVoXjYjLIRV8xCvrStbZWv1OlQTPIeMYmfpaSEqPSAjlEUP3TNN6qa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">
+				<p style="font-size: 16px; color: #fefefe;font-family: 'Open Sans', sans-serif; font-weight: 400;padding-top: 10px;">HELLO </p>
+				<p style="font-weight: 700;color: #fefefe;font-size: 25px;font-family: 'Open Sans', sans-serif;">GREETINGS FROM NEOMEGHA!</p>
+			</div>
+		</div>
+		<div class="body">
+			<div style="font-family: 'Open Sans', sans-serif;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p class="body_p"><b><%=inviteeName%></b> has invited you to be a part of project - 
+					<b><%=projectName%></b>on our platform. Use the following credentials to log into NeoMegha to create projects, provision infrastructure, build applications and lot more.
+				</p>
+				<p class="body_pbold">Email: <%=email%></p>
+				<p class="body_pbold">Password: <%=password%></p>
+				<p class="body_pbold" style="margin-bottom:20px;">Note: We recommend that you change your password post login.</p>
+			</div>
+			<div style="margin: 0 0 20px 1em;text-align:center;">
+				<a href="<%=reset_url%>" name="<%=reset_url%>" class="reset_btn">LOGIN</a>
+			</div>
+			<div style="margin-bottom:20px ; margin-left:1em;text-align:center;	">
+				<h4 style="text-align:center">We wish you a great time exploring.</h4>
+				<p style="opacity:.99;color:#666;font-size:14px;font-weight:400;line-height:24px;margin:0;text-align:center;margin-bottom:10px">Here are some essential links
+				</p>
+
+				<a href=# style="color: #da3e02;"> <span>FAQs</span></a>
+				<a href=# style="color: #da3e02;"><span style="margin-left: 34px;margin-right:30px;">Utility and overview</span></a>
+				<a href=# style="color: #da3e02;"><span>Help</span></a>
+			</div>
+			<div style="margin-bottom:30px;margin-left:1em;text-align:center;">
+				<p style="opacity:.99;color:#666;font-size:15px;font-weight:400;margin:0;font-family: 'Open Sans', sans-serif;">Cheers</p>
+				<p style="opacity:.99;color:#666;font-size:15px;font-weight:400;margin:0;margin-bottom:10px;font-family: 'Open Sans', sans-serif;">Team NeoMegha</p>
+			</div>
+			
+			<div style="margin-bottom:20px;margin-left:1em;text-align:center;">
+				<p style="opacity:.99;font-size:15px;font-weight:400;margin:0;margin-bottom:10px;font-family: 'Open Sans', sans-serif; color:om#ee9c34">
+				<span  style="color :#ee9c34;cursor: pointer;"><a href="https://neomegha.com" name="https://neomegha.com" style="text-decoration: none; color: #ee9c34;cursor: pointer;">Home</a></span>&nbsp;&nbsp;&nbsp;
+				<span style="color :#ee9c34;cursor: pointer; ">
+				<a href="https://neomegha.com" name="https://neomegha.com" style="text-decoration: none; color: #ee9c34;cursor: pointer;">Help</a></span></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3"></div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+[
+    {
+        "roles": [
+            "admin"
+        ],
+        "allows": [
+            {
+                "resources": [
+                    "/api/v1/user"
+                ],
+                "permissions": [
+                    "post",
+                    "get",
+                    "put",
+                    "delete"
+                ]
+            }
+        ]
+    },
+    {
+        "roles": [
+            "guest"
+        ],
+        "allows": [
+            {
+                "resources": [
+                    "/api/v1/user"
+                ],
+                "permissions": [
+                    "get"
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,18 @@
+module.exports = {
+    db: 'mongodb://localhost:27017/pvbase_node',
+    serverUrl: "http://localhost:8000",
+    sesFromAddress: "mnraj218@gmail.com",
+    cronTimmer: "59 23 * * sat",
+    // cronTimmer: "* * * * *",
+    port: 8000,
+    awsAccessKeyId: 'AKIAJL5SHALILVIKKH5Q',
+    awsSecretAccessKey: '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',
+    bucketName: "pharmavigilence",
+    familyName:"pharmavigilence",
+    familyVersion: "0.1",
+    version:"/api/v1",
+    jwtSecret: "niti",
+    jwtTokenexpiresTime: "24h",
+    aclPrefix: "_acl",
+    dateFormat: "DD-MM-YYYY",
+}

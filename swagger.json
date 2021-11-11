@@ -1,0 +1,631 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Zenqore",
+    "description": "Zencore Application API"
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "securityDefinitions": {
+    "authorization": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "authorization"
+    }
+  },
+  "security": [
+    {
+      "authorization": []
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json", "multipart/form-data"],
+  "produces": ["application/json", "application/xml"],
+  "paths": {
+    "/createSegment": {
+      "post": {
+        "tags": ["Segment Management"],
+        "description": "Create Segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "segmentName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Create Segment"
+          }
+        }
+      }
+    },
+
+    "/getSegment/{id}": {
+      "get": {
+        "tags": ["Segment Management"],
+        "description": "Get segment deatils",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get segment deatils"
+          }
+        }
+      }
+    },
+    "/updateSegment/{id}": {
+      "put": {
+        "tags": ["Segment Management"],
+        "description": "Update segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "segmentName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update segment"
+          }
+        }
+      }
+    },
+    "/deleteSegment/{id}": {
+      "delete": {
+        "tags": ["Segment Management"],
+        "description": "Delete segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete segment"
+          }
+        }
+      }
+    },
+    "/getAllSegment": {
+      "get": {
+        "tags": ["Segment Management"],
+        "description": "Get all segment deatils",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get all segment deatils"
+          }
+        }
+      }
+    },
+    "/createSubSegment": {
+      "post": {
+        "tags": ["Sub Segment Management"],
+        "description": "Create Sub Segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "subsegmentName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          },
+          {
+            "name": "segmentId",
+            "in": "formData",
+            "default": "huih49",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created Sub Segment"
+          }
+        }
+      }
+    },
+    "/getSubSegment/{id}": {
+      "get": {
+        "tags": ["Sub Segment Management"],
+        "description": "Get segment details",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get segment deatils"
+          }
+        }
+      }
+    },
+    "/updateSubSegment/{id}": {
+      "put": {
+        "tags": ["Sub Segment Management"],
+        "description": "Update segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "subsegmentName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          },
+          {
+            "name": "segmentId",
+            "in": "formData",
+            "default": "123hiu45",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated sub segment"
+          }
+        }
+      }
+    },
+    "/deleteSubSegment/{id}": {
+      "delete": {
+        "tags": ["Sub Segment Management"],
+        "description": "Delete sub segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete segment"
+          }
+        }
+      }
+    },
+    "/getAllSubSegment": {
+      "get": {
+        "tags": ["Sub Segment Management"],
+        "description": "Get all segment deatils",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get all segment deatils"
+          }
+        }
+      }
+    },
+    "/createProject": {
+      "post": {
+        "tags": ["Project Management"],
+        "description": "Create Project",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "projectName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          },
+          {
+            "name": "segmentId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subsegmentId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Create Segment"
+          }
+        }
+      }
+    },
+    "/getProject/{id}": {
+      "get": {
+        "tags": ["Project Management"],
+        "description": "Get project deatils",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get project deatils"
+          }
+        }
+      }
+    },
+    "/updateProject/{id}": {
+      "put": {
+        "tags": ["Project Management"],
+        "description": "Update project",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "projectName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          },
+          {
+            "name": "segmentId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subsegmentId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated Project"
+          }
+        }
+      }
+    },
+    "/deleteProject/{id}": {
+      "delete": {
+        "tags": ["Project Management"],
+        "description": "Delete project",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted project"
+          }
+        }
+      }
+    },
+    "/getAllProject": {
+      "get": {
+        "tags": ["Project Management"],
+        "description": "Get all project deatils",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get all projects"
+          }
+        }
+      }
+    },
+    "/createSubProject": {
+      "post": {
+        "tags": ["Sub Project Management"],
+        "description": "Create Sub Project",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "subProjName",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          },
+          {
+            "name": "projectId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subsegmentId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "segmentId",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "usermail",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projNumber",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projStartDate",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projEndDate",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projLocation",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projBranch",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projDirName",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projCountry",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projDirCtryCodeText",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projDirNumber",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projMangName",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projManCtryCodeText",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "projMangNumber",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Created Main Project"
+          }
+        }
+      }
+    },
+    "/getSubProject/{id}": {
+      "get": {
+        "tags": ["Sub Project Management"],
+        "description": "Get project deatils",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get project deatils"
+          }
+        }
+      }
+    },
+    "/updateSubProject/{id}": {
+      "put": {
+        "tags": ["Sub Project Management"],
+        "description": "Update segment",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "type": "string",
+            "default": "ABC",
+            "required": true
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "default": "12345",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update segment"
+          }
+        }
+      }
+    },
+    "/deleteSubProject/{id}": {
+      "delete": {
+        "tags": ["Sub Project Management"],
+        "description": "Delete project",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted project"
+          }
+        }
+      }
+    },
+    "/getAllSubProject": {
+      "get": {
+        "tags": ["Sub Project Management"],
+        "description": "Get all projects",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get all projects"
+          }
+        }
+      }
+    },
+    "/getCountryCodes/all": {
+      "get": {
+        "tags": ["IDOS's API Management"],
+        "description": "Get all Country Codes",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get all country codes"
+          }
+        }
+      }
+    },
+    "/getAllOrg/all": {
+      "get": {
+        "tags": ["IDOS's API Management"],
+        "description": "Get all organisation details",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get all organisation details"
+          }
+        }
+      }
+    },
+    "/getAllOrg/one": {
+      "get": {
+        "tags": ["IDOS's API Management"],
+        "description": "Get one organisation details",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "responses": {
+          "200": {
+            "description": "Get one organisation details"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

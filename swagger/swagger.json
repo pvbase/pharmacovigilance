@@ -1,0 +1,2472 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "Swagger API",
+        "description": "",
+        "termsOfService": ""
+    },
+    "basePath": "/",
+    "securityDefinitions": {
+        "jwt": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization"
+        }
+    },
+    "security": [
+        {
+            "jwt": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Certification"
+        },
+        {
+            "name": "Challan Management"
+        },
+        {
+            "name": "Invoice"
+        },
+        {
+            "name":"Certification"
+        },
+        {
+            "name":"Invoice"
+        },
+        {
+            "name":"FrightClaim"
+        },
+        {
+            "name":"DBT Claim"
+            
+        },
+        {
+            "name": "Notification"
+        },
+        {
+            "name": "wareHouse"
+        }
+        
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "paths": {
+        "/api/v1/notification": {
+            "post": {
+                "tags": [
+                    "Notification"
+                ],
+                "description": "Create Notification",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "formData",
+                        "type": "string",
+                        "required": true,
+                        "default": "5c372530b854ff40609ea8f0"
+                    },
+                    {
+                        "name": "message",
+                        "in": "formData",
+                        "default": "Welcome to GNFC",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "notify: true"
+                    }
+                }
+            }
+        },
+        "/api/v1/notification/{id}": {
+            "get": {
+                "tags": [
+                    "Notification"
+                ],
+                "description": "Get Notifications",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "default": "5c372530b854ff40609ea8f0"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success: true"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notification"
+                ],
+                "description": "Clear Notification",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "default": "5c372530b854ff40609ea8f0"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Clear Notification"
+                    }
+                }
+            }
+        },
+        "/api/v1/challan/upload": {
+            "post": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Upload csv file to application",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "type": "file",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Upload csv file to application"
+                    }
+                }
+            }
+        },
+        "/api/v1/challan/{id}": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Get challan deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/challans/showChallanLots/{id}": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Get challan Lot  deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/challan/all": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Get all challan deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/challan/delivery/status": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                    }
+                }
+            }
+        },
+        "/api/v1/challan/retailer/status": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                    }
+                }
+            }
+        },
+        "/api/v1/challan/warehouse/status": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                    }
+                }
+            }
+        },
+        
+        "/api/v1/wareHouse/stock/capacity": {
+            "get": {
+                "tags": [
+                    "wareHouse"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                    }
+                }
+            }
+        },
+        "/api/v1/challans/showChallanDetails/{id}": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Get single challan deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get single challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/challans/getlots": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Get all challan lot deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all challan lot deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/challans/getLotsController": {
+            "get": {
+                "tags": [
+                    "Challan Management"
+                ],
+                "description": "Get all challan lot for retailer",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all challan lot for retailer"
+                    }
+                }
+            }
+        },
+        "/api/v1/product": {
+            "post": {
+                "tags": [
+                    "Product Management"
+                ],
+                "description": "Create product",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "ABC",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "formData",
+                        "default": "12345",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create product"
+                    }
+                }
+            }
+        },
+        "/api/v1/product/{id}": {
+            "get": {
+                "tags": [
+                    "Product Management"
+                ],
+                "description": "Get product deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get product deatils"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Product Management"
+                ],
+                "description": "Update product",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "ABC",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "formData",
+                        "default": "12345",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update product"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Product Management"
+                ],
+                "description": "Delete product",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete product"
+                    }
+                }
+            }
+        },
+        "/api/v1/product/all": {
+            "get": {
+                "tags": [
+                    "Product Management"
+                ],
+                "description": "Get all product deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all product deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/certification/create": {
+            "post": {
+                "tags": [
+                    "Certification"
+                ],
+                "description": "Create Certification",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "certificate_number",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "month",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "month",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "year",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "product_Name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "qtyNotEligible",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "failedSamples",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "companyName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "GNFC",
+                        "required": true
+                    },
+                    {
+                        "name": "created_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "type": "file",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/certification/update/{id}": {
+            "put": {
+                "tags": [
+                    "Certification"
+                ],
+                "description": "Update Certification",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "organisation_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "product_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "failedSamples",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "qtyNotEligible",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "fileUrl",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "ledger_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "modified_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "updated Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/certification/all": {
+            "get": {
+                "tags": [
+                    "Certification"
+                ],
+                "description": "Get Certification Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/certification/s3file/{fileName}": {
+            "get": {
+                "tags": [
+                    "Certification"
+                ],
+                "description": "Get Certification Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "fileName",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get certification details deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/certification/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Certification"
+                ],
+                "description": "Delete Certification",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/invoice/create": {
+            "post": {
+                "tags": [
+                    "Invoice"
+                ],
+                "description": "Create invoice",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "challan_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "product_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "retailer_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "ledger_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "created_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/invoice/update/{id}": {
+            "put": {
+                "tags": [
+                    "Invoice"
+                ],
+                "description": "Update invoice",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "challan_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "product_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "retailer_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "ledger_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "modified_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "updated Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/invoice/all": {
+            "get": {
+                "tags": [
+                    "Invoice"
+                ],
+                "description": "Get invoice Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/invoice/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Invoice"
+                ],
+                "description": "Delete invoice",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/organisation": {
+            "post": {
+                "tags": [
+                    "Organisation Management"
+                ],
+                "description": "Create organisation",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "ABC",
+                        "required": true
+                    },
+                    {
+                        "name": "location",
+                        "in": "formData",
+                        "default": "Blore",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create organisation"
+                    }
+                }
+            }
+        },
+        "/api/v1/organisation/{id}": {
+            "get": {
+                "tags": [
+                    "Organisation Management"
+                ],
+                "description": "Get organisation deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get organisation deatils"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Organisation Management"
+                ],
+                "description": "Get organisation deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "ABC",
+                        "required": true
+                    },
+                    {
+                        "name": "location",
+                        "in": "formData",
+                        "default": "Blore",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Organisation Management"
+                ],
+                "description": "Delete organisation deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete organisation deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/organisation/all": {
+            "get": {
+                "tags": [
+                    "Organisation Management"
+                ],
+                "description": "Get all organisation deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all organisation deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/role": {
+            "post": {
+                "tags": [
+                    "Role Management"
+                ],
+                "description": "Create role",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Controller",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create role"
+                    }
+                }
+            }
+        },
+        "/api/v1/role/{id}": {
+            "get": {
+                "tags": [
+                    "Role Management"
+                ],
+                "description": "Get role deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get role deatils"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Role Management"
+                ],
+                "description": "Get role deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Controller",
+                        "required": true
+                    },
+                    {
+                        "name": "is_active",
+                        "in": "formData",
+                        "type": "string",
+                        "enum": [
+                            "true",
+                            "false"
+                        ],
+                        "default": "true",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get role deatils"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Role Management"
+                ],
+                "description": "Delete role deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete role deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/role/all": {
+            "get": {
+                "tags": [
+                    "Role Management"
+                ],
+                "description": "Get all role deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all role deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/user": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Signup to application",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "fname",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "sadasiba",
+                        "required": true
+                    },
+                    {
+                        "name": "lname",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "sahoo",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "sadasiba.sahoo@in.pwc.com",
+                        "required": true
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "format": "password",
+                        "default": "sadasiba",
+                        "required": true
+                    },
+                    {
+                        "name": "confirmPassword",
+                        "in": "formData",
+                        "type": "string",
+                        "format": "password",
+                        "default": "sadasiba",
+                        "required": true
+                    },
+                    {
+                        "name": "location",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "narmadaNagar",
+                        "required": true
+                    },
+                    {
+                        "name": "created_by",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "Rakesh Dhavan",
+                        "required": true
+                    },
+                    {
+                        "name": "role_id",
+                        "in": "formData",
+                        "enum": [
+                            "Administrator",
+                            "Controller",
+                            "Manufacturer",
+                            "Warehouse",
+                            "Certifier",
+                            "Retailer"
+                        ],
+                        "default": "Controller",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "org_name",
+                        "in": "formData",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "org_id",
+                        "in": "formData",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Signup to application"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/{id}": {
+            "get": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Get user deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Get user deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "role_id",
+                        "in": "formData",
+                        "enum": [
+                            "Administrator",
+                            "Controller",
+                            "Manufacturer",
+                            "Warehouse",
+                            "Certifier",
+                            "Retailer"
+                        ],
+                        "default": "Controller",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "org_id",
+                        "in": "formData",
+                        "type": "string",
+                        "enum": [
+                            "GNFC"
+                        ],
+                        "default": "GNFC",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Delete user deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/all": {
+            "get": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Get all user deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/userCounts": {
+            "get": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Get all user count deatils",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all user count deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/login": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "description": "Login to application",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "manu.admin@in.pwc.com",
+                        "required": true
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "type": "string",
+                        "format": "password",
+                        "default": "password",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login to application"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/create": {
+            "post": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "Create frightClaim",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "org_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "GNFC",
+                        "required": true
+                    },
+                    {
+                        "name": "month",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "01",
+                        "required": true
+                    },
+                    {
+                        "name": "year",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "2019",
+                        "required": true
+                    },
+                    {
+                        "name": "organisation_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "userId",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "5c3b9639ef71f72968480ae5",
+                        "required": true
+                    }
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/update/{id}": {
+            "put": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "Update frightClaim",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "challan_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "organisation_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "status",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "month",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "year",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "ledger_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "modified_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "updated Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/all": {
+            "get": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "Get frightClaim Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/getall": {
+            "get": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "Get frightClaim Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/downloadReport/{id}": {
+            "get": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "download report",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "Delete frightClaim",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/frightClaim/getAllClaimChallans": {
+            "get": {
+                "tags": [
+                    "FrightClaim"
+                ],
+                "description": "getting challan report",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "getting challan report"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/create": {
+            "post": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "Create dbtClaim",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "org_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "GNFC",
+                        "required": true
+                    },
+                    {
+                        "name": "date",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "2019-01-21T01:00:00.000Z",
+                        "required": true
+                    },
+                    {
+                        "name": "week",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "2",
+                        "required": true
+                    },
+                    {
+                        "name": "month",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "01",
+                        "required": true
+                    },
+                    {
+                        "name": "year",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "2019",
+                        "required": true
+                    },
+                    {
+                        "name": "organisation_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "5c4811cba9f6a34770236283",
+                        "required": true
+                    },
+                    {
+                        "name": "userId",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "5c3b9639ef71f72968480ae5",
+                        "required": true
+                    }
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/update/{id}": {
+            "put": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "Update dbtClaim",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "invoice_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "organisation_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "status",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "ledger_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "created_At",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": false
+                    },
+                    {
+                        "name": "modified_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "updated Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/all": {
+            "get": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "Get dbtClaim Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get dbtClaim deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/getall": {
+            "get": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "Get dbtClaim Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get dbtClaim deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/downloadReport/{id}": {
+            "get": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "download report",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "download report"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "Delete dbtClaim",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/getAllClaimChallans": {
+            "get": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "getting challan report",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "getting challan report"
+                    }
+                }
+            }
+        },
+        "/api/v1/dbtClaim/getChallanInvoice/{id}/{org_name}": {
+            "get": {
+                "tags": [
+                    "DBT Claim"
+                ],
+                "description": "getChallanInvoice",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "org_name",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "getChallanInvoice"
+                    }
+                }
+            }
+        },
+        "/api/v1/inventory/report/{type}/{id}": {
+            "get": {
+                "tags": [
+                    "Inventory Management"
+                ],
+                "description": "Download report",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "default": "csv",
+                        "enum": [
+                            "csv",
+                            "html",
+                            "xlsx",
+                            "pdf"
+                        ],
+                        "description": "Select report type ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Download report"
+                    }
+                }
+            }
+        },
+        "/api/v1/inventory/download/{fileName}": {
+            "get": {
+                "tags": [
+                    "Inventory Management"
+                ],
+                "description": "Download AWS s3 file",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "fileName",
+                        "in": "path",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Download report"
+                    }
+                }
+            }
+        },
+        "/api/v1/wareHouse/getWareHouseChallans/{wareHouse}": {
+            "get": {
+                "tags": [
+                    "wareHouse"
+                ],
+                "description": "Get wareHouse challan Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "wareHouse",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get wareHouse challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/wareHouse/approveChallan/{id}": {
+            "put": {
+                "tags": [
+                    "wareHouse"
+                ],
+                "description": "approve wareHouse challan Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "status",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "received_quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "user_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get wareHouse challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/wareHouse/getInventory/{reciver_name}": {
+            "get": {
+                "tags": [
+                    "wareHouse"
+                ],
+                "description": "Get wareHouse inventory Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "reciver_name",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get wareHouse inventory deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/wareHouse/generateChallan": {
+            "post": {
+                "tags": [
+                    "wareHouse"
+                ],
+                "description": "generate challan for retailer",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "product_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "invoice_no",
+                        "in": "formData",
+                        "type": "integer",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "vehicle_no",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "org_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "GNFC",
+                        "required": true
+                    },
+                    {
+                        "name": "month",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "01",
+                        "required": true
+                    },
+                    {
+                        "name": "year",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "2019",
+                        "required": true
+                    },
+                    {
+                        "name": "organisation_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "userId",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "reciver_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "manufaturer_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "ledger_Id",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "created_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/wareHouse/activeChallans/{wareHouse}": {
+            "get": {
+                "tags": [
+                    "wareHouse"
+                ],
+                "description": "Get wareHouse active  challan Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "wareHouse",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get wareHouse active challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/controllerFlow/user/{role_id}": {
+            "get": {
+                "tags": [
+                    "ControllerFlow"
+                ],
+                "description": "Get Controller user Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "role_id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Controller user deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/retailer/stock/capacity": {
+            "get": {
+                "tags": [
+                    "Retailer"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "responses": {
+                    "200": {
+                    }
+                }
+            }
+        },
+        
+        "/api/v1/retailer/getRetailerChallans/{retailer}": {
+            "get": {
+                "tags": [
+                    "Retailer"
+                ],
+                "description": "Get retailer challan Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "retailer",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get retailer challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/retailer/approveChallan/{id}": {
+            "put": {
+                "tags": [
+                    "Retailer"
+                ],
+                "description": "Get retailer challan Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "status",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "received_quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "retailerName",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get retailer challan deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/retailer/getInventory/{reciver_name}": {
+            "get": {
+                "tags": [
+                    "Retailer"
+                ],
+                "description": "Get retailer inventory Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "reciver_name",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get retailer inventory deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/retailer/getRetailerDetails/{id}": {
+            "get": {
+                "tags": [
+                    "Retailer"
+                ],
+                "description": "Get retailer steper inventory Details",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get retailer steper inventory deatils"
+                    }
+                }
+            }
+        },
+        "/api/v1/retailer/createInvoice": {
+            "post": {
+                "tags": [
+                    "Retailer"
+                ],
+                "description": "generate Invoice",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [
+                    {
+                        "name": "org_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "product_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "receive_quantity",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "date",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "district",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "created_By",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "retailer_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "plant_name",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    },
+                    {
+                        "name": "units",
+                        "in": "formData",
+                        "type": "string",
+                        "default": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/payment/ripple/transfer": {
+            "post": {
+              "tags": [
+                "Payment"
+              ],
+              "description": "Make ripple payment",
+              "consumes": [
+                "application/x-www-form-urlencoded"
+              ],
+              "parameters": [
+                {
+                    "name": "sender_id",
+                    "in": "formData",
+                    "type": "string",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "name": "reciever_id",
+                    "in": "formData",
+                    "type": "string",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "name": "amount",
+                    "in": "formData",
+                    "type": "number",
+                    "default": "",
+                    "required": true
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Make ripple payment"
+                }
+              }
+            }
+          }
+    }
+      
+}
