@@ -33,7 +33,8 @@ exports.register = function (req, res) {
       password: inputData.password,
       role_id: inputData.role_id,
       org_id: inputData.org_id,
-      org_name: inputData.org_name,
+      departmentId:inputData.departmentId,
+      designationId:inputData.designationId,
       location: inputData.location,
       created_by: inputData.created_by,
     });

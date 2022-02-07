@@ -6,8 +6,10 @@ exports.createRole = function (req, res) {
     }
     else {
         var newRoleDetails = new Role({
-            name: req.body.name
-            // created_by: req.decoded.id
+            name: req.body.name,
+            code:req.body.code,
+            desc:req.body.desc,
+            status:req.body.status
         });
 
         newRoleDetails.save(function (err, data) {
