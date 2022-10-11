@@ -1,15 +1,15 @@
 const express = require('express')
-const OrganisationController = require("../app/controller/OrganisationController");
+// const OrganisationController = require("./controller/OrganisationController");
 const RoleController = require("./controller/RoleController");
 const UserController = require("./controller/userController");
 router = express.Router()
 
 //Organization Routes
-router.post('/api/v1/organisation', OrganisationController.createOrganisation);
-router.get('/api/v1/organisation/all', OrganisationController.showAllOrganisationDetails);
-router.get('/api/v1/organisation/:id', OrganisationController.getOrganisationDetails);
-router.put('/api/v1/organisation/:id', OrganisationController.updateOrganisationDetails);
-router.delete('/api/v1/organisation/:id', OrganisationController.deleteOrganisation);
+// router.post('/api/v1/organisation', OrganisationController.createOrganisation);
+// router.get('/api/v1/organisation/all', OrganisationController.showAllOrganisationDetails);
+// router.get('/api/v1/organisation/:id', OrganisationController.getOrganisationDetails);
+// router.put('/api/v1/organisation/:id', OrganisationController.updateOrganisationDetails);
+// router.delete('/api/v1/organisation/:id', OrganisationController.deleteOrganisation);
 
 //Role Routes
 router.post('/api/v1/role', RoleController.createRole);
