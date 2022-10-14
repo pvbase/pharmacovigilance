@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const Schema = mongoose.Schema;
 const DesignationSchema = mongoose.Schema(
   {
     dName: { type: String, trim: true },
@@ -7,8 +7,8 @@ const DesignationSchema = mongoose.Schema(
     designationCode: { type: String, trim: true },
     desc: { type: String, trim: true },
     is_active: { type: Boolean, default: true },
-    created_by: String,
-    modified_by: String,
+    created_by: {type:String},
+    modified_by:{type:String},
   },
   { timestamps: true },
 )

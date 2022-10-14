@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const Schema = mongoose.Schema;
 const DepartmentSchema = mongoose.Schema(
   {
     dName: { type: String, trim: true },

@@ -1,5 +1,4 @@
 const Department = require('../models/DepartmentModel')
-
 exports.createDepartment = function (req, res) {
   var deptDetails = req.body //Get the parsed information
 

@@ -1,12 +1,30 @@
 const mongoose = require('mongoose');
-
+const Schema = mongoose.Schema;
 const OrganisationSchema = mongoose.Schema({
-  name: { type: String, unique: true, trim: true },
-  location: { type: String, trim: true },
-  // org_type_id: { type: String, trim: true },
-  is_active: { type: Boolean, default: true },
-  created_by: String,
-  modified_by: String,
+  legal:{
+    companyName:{type:String},
+    typeofBuisiness:{type:String},
+    adress1:{type:String},
+    adress2:{type:String},
+    city:{type:String},
+    state:{type:String},
+    country:{type:String},
+    postcode:{type:String},
+    tax:{type:String},
+    industryVertical:{type:String}
+
+
+  },
+ contact:{
+  contactName: {type:String},
+  designation: {type:String},
+  email1:{type:String},
+  email2:{type:String},
+  phone1:{type:Number},
+  phone2:{type:Number}
+ },
+
+ 
 },
 { timestamps: true });
 

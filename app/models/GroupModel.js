@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const Schema = mongoose.Schema;
 const GroupSchema = mongoose.Schema(
   {
     name: { type: String, trim: true },
@@ -7,8 +7,8 @@ const GroupSchema = mongoose.Schema(
     desc: { type: String, trim: true },
     users: { type: Array },
     is_active: { type: Boolean, default: true },
-    created_by: String,
-    modified_by: String,
+    created_by: { type: String },
+    modified_by: { type: String },
   },
   { timestamps: true },
 )
