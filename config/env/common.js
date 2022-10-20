@@ -7,4 +7,4 @@ module.exports = {
     approverEmail: "sanjay.xy.kumar@pwc.com",
     fromEmail: "dfpcloud@gmail.com",
     
-}
+} 

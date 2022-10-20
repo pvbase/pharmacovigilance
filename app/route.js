@@ -6,7 +6,8 @@ const BranchController = require("./controller/BranchController");
 const DepartmentController = require('./controller/DepartmentController');
 const DesignationController = require('./controller/DesignationController');
 const GroupController = require("./controller/GroupController");
-const MappingController = require("./controller/MappingController")
+const MappingController = require("./controller/MappingController");
+const SettingController = require("./controller/SettingController");
 router = express.Router()
 
 //Organization Routes
@@ -67,5 +68,12 @@ router.get('/api/v1/mapping/:id', MappingController.getMappingDetails);
 router.put('/api/v1/mapping/:id', MappingController.updateMappingDetails);
 router.delete('/api/v1/mapping/:id', MappingController.deleteMapping);
 
+//SettingModel
+
+router.post('/api/v1/setting', SettingController.createSetting);
+router.get('/api/v1/setting/all',SettingController.showAllSettingDetails);
+router.get('/api/v1/setting/:id', SettingController.getSettingDetails);
+router.put('/api/v1/setting/:id', SettingController.updateSettingDetails);
+router.delete('/api/v1/setting/:id', SettingController.deleteSetting);
 
 module.exports = router

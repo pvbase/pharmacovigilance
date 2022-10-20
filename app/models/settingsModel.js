@@ -83,8 +83,8 @@ const SettingSchema = mongoose.Schema(
     emailServer: { type: Object },
     smsServer: { type: Object },
     is_active: { type: Boolean, default: true },
-    created_by: String,
-    modified_by: String,
+    created_by: {type:String},
+    modified_by:{ type:String},
   },
   { timestamps: true },
 )
